@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <!-- 渐变背景：淡紫到深紫 -->
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E8DFF5"/>
+      <stop offset="55%" stop-color="#B8A5D9"/>
+      <stop offset="100%" stop-color="#6B5B95"/>
+    </linearGradient>
+    <!-- 身体渐变 -->
+    <linearGradient id="bodyG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9B8FB5"/>
+      <stop offset="100%" stop-color="#5B5273"/>
+    </linearGradient>
+    <!-- 头发高光 -->
+    <linearGradient id="hairG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3A3540"/>
+      <stop offset="100%" stop-color="#1F1B26"/>
+    </linearGradient>
+    <!-- 眼睛反光 -->
+    <radialGradient id="glassG" cx="0.3" cy="0.3" r="0.7">
+      <stop offset="0%" stop-color="#A8A0B8"/>
+      <stop offset="100%" stop-color="#3A3540"/>
+    </radialGradient>
+    <!-- 闪光 -->
+    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="6"/>
+      <feOffset dx="0" dy="3" result="off"/>
+      <feComponentTransfer><feFuncA type="linear" slope="0.4"/></feComponentTransfer>
+      <feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <!-- 圆角矩形底（iOS app icon 风格） -->
+  <rect x="0" y="0" width="512" height="512" rx="115" ry="115" fill="url(#bg)"/>
+
+  <!-- 背景圆点装饰 -->
+  <circle cx="80"  cy="100" r="6" fill="#FFFFFF" opacity="0.15"/>
+  <circle cx="430" cy="80"  r="8" fill="#FFFFFF" opacity="0.18"/>
+  <circle cx="450" cy="200" r="5" fill="#FFFFFF" opacity="0.15"/>
+  <circle cx="60"  cy="350" r="7" fill="#FFFFFF" opacity="0.12"/>
+  <circle cx="380" cy="440" r="6" fill="#FFFFFF" opacity="0.15"/>
+  <circle cx="120" cy="430" r="5" fill="#FFFFFF" opacity="0.12"/>
+  <!-- 星形装饰 -->
+  <path d="M 100 220 L 105 235 L 120 235 L 108 245 L 113 260 L 100 250 L 87 260 L 92 245 L 80 235 L 95 235 Z" fill="#FFFFFF" opacity="0.10"/>
+  <path d="M 420 320 L 423 330 L 433 330 L 425 336 L 428 346 L 420 340 L 412 346 L 415 336 L 407 330 L 417 330 Z" fill="#FFFFFF" opacity="0.10"/>
+
+  <!-- ===== 玩偶 ===== -->
+  <g transform="translate(256 290)" filter="url(#softShadow)">
+    <!-- 身体（蓬松毛绒感） -->
+    <path d="M -110 130 Q -110 -20 0 -30 Q 110 -20 110 130 Z" fill="url(#bodyG)"/>
+    <ellipse cx="0" cy="130" rx="120" ry="14" fill="#3A3540" opacity="0.35"/>
+    <!-- 毛绒小细节（虚线感） -->
+    <path d="M -100 100 Q -90 95 -80 100 M -50 110 Q -40 105 -30 110 M 30 110 Q 40 105 50 110 M 80 100 Q 90 95 100 100" stroke="#3A3540" stroke-width="2" fill="none" opacity="0.4"/>
+    <!-- 项圈 -->
+    <rect x="-65" y="-25" width="130" height="22" rx="6" fill="#2A252F"/>
+    <!-- 铆钉 -->
+    <circle cx="-40" cy="-14" r="4" fill="#C7B8E8"/>
+    <circle cx="-40" cy="-14" r="1.5" fill="#FFFFFF" opacity="0.6"/>
+    <circle cx="0" cy="-14" r="4" fill="#C7B8E8"/>
+    <circle cx="0" cy="-14" r="1.5" fill="#FFFFFF" opacity="0.6"/>
+    <circle cx="40" cy="-14" r="4" fill="#C7B8E8"/>
+    <circle cx="40" cy="-14" r="1.5" fill="#FFFFFF" opacity="0.6"/>
+    <!-- 中心铆钉（星形） -->
+    <path d="M 0 -22 L 1.5 -16 L 8 -16 L 3 -12 L 5 -6 L 0 -10 L -5 -6 L -3 -12 L -8 -16 L -1.5 -16 Z" fill="#C7B8E8"/>
+
+    <!-- 左手挥手（高） -->
+    <path d="M 100 -10 Q 145 -50 165 -90 Q 175 -100 168 -110 Q 158 -115 152 -100 L 135 -65" stroke="#9B8FB5" stroke-width="22" fill="none" stroke-linecap="round"/>
+    <circle cx="166" cy="-105" r="14" fill="#F0E2D4"/>
+    <!-- 头 -->
+    <circle cx="0" cy="-90" r="85" fill="#F0E2D4"/>
+    <!-- 头发（齐刘海+短发） -->
+    <path d="M -85 -100 Q -75 -175 0 -180 Q 75 -175 85 -100 Q 80 -125 65 -135 L 50 -125 L 30 -140 L 0 -130 L -30 -140 L -50 -125 L -65 -135 Q -80 -125 -85 -100 Z" fill="url(#hairG)"/>
+    <!-- 头发侧边 -->
+    <path d="M -85 -100 Q -100 -60 -90 -10 Q -85 -25 -78 -45 Z" fill="url(#hairG)"/>
+    <path d="M 85 -100 Q 100 -60 90 -10 Q 85 -25 78 -45 Z" fill="url(#hairG)"/>
+    <!-- 圆框眼镜（黑框） -->
+    <circle cx="-32" cy="-95" r="26" fill="#FFFFFF" opacity="0.2"/>
+    <circle cx="32"  cy="-95" r="26" fill="#FFFFFF" opacity="0.2"/>
+    <circle cx="-32" cy="-95" r="24" fill="none" stroke="#1F1B26" stroke-width="6"/>
+    <circle cx="32"  cy="-95" r="24" fill="none" stroke="#1F1B26" stroke-width="6"/>
+    <line x1="-8" y1="-95" x2="8" y2="-95" stroke="#1F1B26" stroke-width="5"/>
+    <!-- 镜片高光 -->
+    <ellipse cx="-40" cy="-105" rx="6" ry="3" fill="#FFFFFF" opacity="0.6"/>
+    <ellipse cx="24"  cy="-105" rx="6" ry="3" fill="#FFFFFF" opacity="0.6"/>
+    <!-- 右镜内「NO!」字样（玩偶的招牌） -->
+    <text x="32" y="-89" font-size="14" font-weight="900" fill="#1F1B26" text-anchor="middle" font-family="Arial Black, sans-serif" font-style="italic">NO!</text>
+    <!-- 左镜反光圆点 -->
+    <circle cx="-38" cy="-100" r="3" fill="#FFFFFF" opacity="0.9"/>
+    <!-- 腮红 -->
+    <ellipse cx="-55" cy="-72" rx="14" ry="8" fill="#D49AAB" opacity="0.7"/>
+    <ellipse cx="55"  cy="-72" rx="14" ry="8" fill="#D49AAB" opacity="0.7"/>
+    <!-- 嘴（微笑） -->
+    <path d="M -12 -55 Q 0 -45 12 -55" stroke="#3A3540" stroke-width="4" fill="none" stroke-linecap="round"/>
+    <!-- 右手放下 -->
+    <circle cx="-115" cy="20" r="14" fill="#F0E2D4"/>
+  </g>
+</svg>
